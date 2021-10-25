@@ -21,7 +21,6 @@ const esVocal = palabra => {
   }
   let vocalConsonante = `${vocales}${consonantes}`;
   return vocalConsonante;
-  console.log(`La palabra ordenada por vocales sería ${vocalConsonante}`);
 };
 
 const separarVocalsDeConsonants = palabra => {
@@ -30,5 +29,4 @@ const separarVocalsDeConsonants = palabra => {
   let consonantes = vocalConsonante.slice(vocales.length);
   console.log(`La palabra sería ${vocalConsonante}`);
 };
-esVocal(palabra);
 separarVocalsDeConsonants(palabra);
