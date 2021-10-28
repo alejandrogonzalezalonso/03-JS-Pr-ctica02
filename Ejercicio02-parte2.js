@@ -1,59 +1,48 @@
-//Ejercicio contraseña
+// Ejercicio contraseña
 
-//Mínimo 8 carácteres 20 máxim(testLlargada)
+// Mínimo 8 carácteres 20 máxim(testLlargada)
 
 const testLlargada = pass => {
-  pass = 'ALex2021';
-  console.log(pass);
-  if (pass.length < 8 || pass.length > 20) {
-    //pass === false;
-    console.log('hola');
-  } else {
-    //pass === true;
-    console.log('adios');
-  }
-
-  let mensaje =
-    pass === true
-      ? 'Has introducido correctamente la clave'
-      : 'Has introducido mal la clave';
-
-  return mensaje;
+    if (pass.length < 8 || pass.length > 20) {
+        return true;
+    } else {
+        console.log("La contraseña introducida tiene la longitud incorrecta");
+    }
 };
 
-//Al menos tres letras minúsculas (testMinuscula)
+// Al menos tres letras minúsculas (testMinuscula)
 
 const testMinuscula = pass => {
-  pass = 'hola2';
+    minus = 0;
+    for (i = 0; i < pass.length; i ++) {
+        if (pass.charCodeAt(i) >= 97 || pass.charCodeAt(i) <= 122 && minus < 3) {
+            minus ++;
+        } else {
+            console.log("La contraseña introducida es incorrecta")
+        }
+    }
 };
 
-//una letra mayúscula (testMayuscula)
+// una letra mayúscula (testMayuscula)
 
 const testMayuscula = pass => {
-  pass = 'hola3';
+    mayus = 0;
+    for (i = 0; i < pass.length; i ++) {
+        if (pass.charCodeAt(i) >= 65 || pass.charCodeAt(i) <= 90 && mayus < 3) {
+            mayus ++;
+        }
+    }
+
 };
 
-//con dos digitos. (testDigits)
+const testDigits = (pass) => {
+    else {
+        return false;
+    } testMinuscula();
+    testMayuscula();
+    testDigits();
+    testCaractersRepetits();
 
-const testDigits = pass => {
-  pass = 'hola4';
-};
-
-//No ha de tener caracteres repetidos seguidos aaa es debil pero aa y a son fuertes(testCaractersRepetits)
-
-const testCaractersRepetits = pass => {
-  pass = 'hola5';
-  return pass;
-};
-
-//Comprobación de contraseña, coger todas las funciones y llamarlas aquí (testContrasenya)
-
-function testContrasenya(pass) {
-  testLlargada(pass);
-  testMinuscula(pass);
-  testMayuscula(pass);
-  testDigits(pass);
-  testCaractersRepetits(pass);
 }
 
 testContrasenya();
